@@ -1,0 +1,40 @@
+# Ignore all build output directories recursively
+**/build/
+build/
+
+# Ignore common Zephyr build artifacts
+*.hex
+*.bin
+*.elf
+*.map
+*.lst
+*.d
+*.o
+*.a
+*.so
+*.mod.c
+*.pyc
+*.pyo
+*.orig
+
+# Logs and temporary files
+*.log
+*.swp
+*.swo
+*.tmp
+*.bak
+
+# IDE/editor-specific files
+.vscode/
+*.code-workspace
+.idea/
+*.DS_Store
+*.directory
+
+# GDB or debugging files
+.gdb_history
+*.launch
+*.svd
+
+# Others
+tags

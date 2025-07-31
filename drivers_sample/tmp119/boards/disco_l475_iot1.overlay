@@ -1,0 +1,10 @@
+&i2c1 {
+    status = "okay";
+    tmp119@4a {
+        compatible = "ti,tmp119";
+        reg = <0x4a>;
+        label = "TMP119";
+        odr = <0x200>;  // TMP119_DT_ODR_1000_MS
+        status = "okay";
+    };
+};

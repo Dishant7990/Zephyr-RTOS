@@ -1,0 +1,13 @@
+sample:
+  name: TMP119 Sensor Sample
+
+tests:
+  sample.sensor.tmp119:
+    harness: console
+    tags: sensors
+    depends_on: i2c
+    filter: dt_compat_enabled("ti,tmp119")
+    harness_config:
+      type: one_line
+      regex:
+        - "Temperature: (.*) °C"
