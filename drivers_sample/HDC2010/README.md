@@ -28,7 +28,7 @@ Ensure the following before starting:
 
 ```sh
 cd zephyr/drivers/sensor/ti
-mkdir HDC2010
+mkdir hdc2010
 ```
 
 ## 📄 Step 2: Create Required Files
