@@ -61,7 +61,7 @@ zephyr_library_sources_ifdef(CONFIG_HDC2010_TRIGGER hdc2010_trigger.c)
 menuconfig HDC2010
     bool "HDC2010 Temperature and Humidity Sensor"
     default y
-    depends on DT_HAS_TI_HDC2010_ENABLED
+    depends on DT_HAS_TI_MYHDC2010_ENABLED
     select I2C
     help
         Enable driver for TI HDC2010 Temperature and Humidity
@@ -701,16 +701,16 @@ source "drivers/sensor/ti/hdc2010/Kconfig"
 
 ## 📜 Step 4: Create Device Binding YAML File
 
-file already there at: `zephyr/dts/bindings/sensor/ti,hdc2010.yaml`
+Create a new file at : `zephyr/dts/bindings/sensor/ti,myhdc2010.yaml`
 
-### 📄 ti,hdc2010.yaml 
+### 📄 ti,myhdc2010.yaml 
 ```yaml
 # Copyright (c) 2021, Aurelien Jarno
 # SPDX-License-Identifier: Apache-2.0
 
 description: Texas Instruments HDC2010 Temperature and Humidity Sensor
 
-compatible: "ti,hdc2010"
+compatible: "ti,myhdc2010"
 
 include: ti,hdc20xx.yaml
 
@@ -724,7 +724,7 @@ properties:
 
 ---
 
-## 📁 Step 5: Create DT Binding Header
+## 📁 Step 5: Create a header file for HDC2010 (hdc2010.h)
 
 create a header file: `zephyr\include\zephyr\drivers\sensor\hdc2010.h`
 
@@ -839,7 +839,7 @@ enum sensor_attribute_hdc2010 {
 
 ## 🧾 Step 6: Initiate Device Node in Your Application Code(main.c)
 ```c
-#define HDC2010_NODE DT_COMPAT_GET_ANY_STATUS_OKAY(ti_hdc2010)
+#define HDC2010_NODE DT_COMPAT_GET_ANY_STATUS_OKAY(ti_myhdc2010)
 
 const struct device *dev = DEVICE_DT_GET(HDC2010_NODE);
 ```

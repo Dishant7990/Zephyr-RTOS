@@ -563,7 +563,7 @@ properties:
 
 create a header file: `zephyr/include/zephyr/dt-bindings/sensor/tmp119.h`
 
-```
+```h
 /**
  * Copyright (c) 2024 Vitrolife A/S
  *
@@ -596,9 +596,43 @@ create a header file: `zephyr/include/zephyr/dt-bindings/sensor/tmp119.h`
 
 #endif /* ZEPHYR_INCLUDE_DT_BINDINGS_TI_TMP119_H_ */
 ```
+
+
+## 📁 Step 6 : Create a file for TMP119 driver header (tmp119.h)
+
+Path: `zephyr/include/drivers/sensor/tmp119.h`
+
+```c
+/*
+ * Copyright (c) 2021 Innoseis B.V
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+#ifndef ZEPHYR_INCLUDE_DRIVERS_SENSOR_MYTMP119_H_
+#define ZEPHYR_INCLUDE_DRIVERS_SENSOR_MYTMP119_H_
+
+#include <zephyr/device.h>
+#include <zephyr/drivers/sensor.h>
+#include <sys/types.h>
+
+enum sensor_attribute_tmp_119 {
+	/** Turn on power saving/one shot mode */
+	SENSOR_ATTR_TMP119_ONE_SHOT_MODE = SENSOR_ATTR_PRIV_START,
+	/** Shutdown the sensor */
+	SENSOR_ATTR_TMP119_SHUTDOWN_MODE,
+	/** Turn on continuous conversion */
+	SENSOR_ATTR_TMP119_CONTINUOUS_CONVERSION_MODE,
+	/* Soft Reset */
+	SENSOR_ATTR_TMP119_SOFT_RESET,
+};
+
+#endif /* ZEPHYR_INCLUDE_DRIVERS_SENSOR_TMP119_H_ */
+```
+
 ---
 
-## 🧾 Step 6: Initiate Device Node in Your Application Code(main.c)
+## 🧾 Step 7: Initiate Device Node in Your Application Code(main.c)
 ```c
 #define TMP119_NODE DT_COMPAT_GET_ANY_STATUS_OKAY(ti_tmp119)
 
