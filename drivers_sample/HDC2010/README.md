@@ -857,5 +857,6 @@ const struct device *dev = DEVICE_DT_GET(HDC2010_NODE);
 ## 📚 References
 
 * [Zephyr Sensor API Docs](https://docs.zephyrproject.org/latest/reference/peripherals/sensor.html)
+* [HDC2010 Datasheet - TI](https://www.ti.com/lit/ds/symlink/hdc2010.pdf?ts=1756358381346&ref_url=https%253A%252F%252Fwww.ti.com%252Fproduct%252FHDC2010%253Futm_source%253Dgoogle%2526utm_medium%253Dcpc%2526utm_campaign%253Dasc-null-null-GPN_EN-cpc-pf-google-ww_en_cons%2526utm_content%253DHDC2010%2526ds_k%253DHDC2010+Datasheet%2526DCM%253Dyes%2526gclsrc%253Daw.ds%2526gad_source%253D1%2526gad_campaignid%253D14388345080%2526gbraid%253D0AAAAAC068F3qzqpQchdVW_8_cYD2c2jAk%2526gclid%253DCjwKCAjw2brFBhBOEiwAVJX5GDhNKrAb8JrMZadJh87mOUTrbaMggxjoV7UInDtb2Rdxor09qPHGKRoClLkQAvD_BwE)
 * [Zephyr I2C API](https://docs.zephyrproject.org/latest/reference/peripherals/i2c.html)
 * [SENSOR\_DEVICE\_DT\_INST\_DEFINE](https://docs.zephyrproject.org/latest/reference/kernel/api.html#c.SENSOR_DEVICE_DT_INST_DEFINE)
