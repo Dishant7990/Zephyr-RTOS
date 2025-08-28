@@ -80,7 +80,7 @@ endif   # HDC2010
 ---
 
 ### 📄 hdc2010.h
-```
+```h
 /**
  * @file
  * @brief TI HDC2010 Temperature and Humidity Sensor Driver
@@ -195,12 +195,13 @@ static int hdc2010_attr_get(const struct device *dev, enum sensor_channel chan,
 static int hdc2010_sample_fetch(const struct device *dev, enum sensor_channel chan);
 
 #endif // ZEPHYR_DRIVERS_SENSOR_HDC2010_HDC2010_H_
+
 ```
 
 ---
 ###  📄 hdc2010.c
 
-```
+```c
 /**
  * @file hdc2010.c
  * @brief TI HDC2010 Humidity and Temperature Sensor Driver file
@@ -584,7 +585,7 @@ DT_INST_FOREACH_STATUS_OKAY(DEFINE_HDC2010)
 ```
 
 ###  📄 hdc2010_trigger.c
-```
+```c
 /**
  * @file hdc2010_trigger.c
  * @brief HDC2010 Trigger & Interrupt Handling
@@ -703,7 +704,7 @@ source "drivers/sensor/ti/hdc2010/Kconfig"
 file already there at: `zephyr/dts/bindings/sensor/ti,hdc2010.yaml`
 
 ### 📄 ti,hdc2010.yaml 
-```
+```yaml
 # Copyright (c) 2021, Aurelien Jarno
 # SPDX-License-Identifier: Apache-2.0
 
@@ -727,7 +728,7 @@ properties:
 
 create a header file: `zephyr\include\zephyr\drivers\sensor\hdc2010.h`
 
-```
+```h
 /**
  * @file hdc2010.h
  * @brief Extended public API for TI's HDC2010 Temperature & Humidity Sensor
