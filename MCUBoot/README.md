@@ -8,24 +8,25 @@ Developed and maintained by the **MCUboot community** (backed by projects like Z
 
 | Feature                           | Description                                                                                        |
 | --------------------------------- | -------------------------------------------------------------------------------------------------- |
-| ✅ **Secure Boot**                 | Verifies firmware using cryptographic signatures before booting.                                   |
-| 🔁 **Firmware Upgrade**           | Supports upgrading firmware images over-the-air (OTA), USB, UART, BLE, etc.                        |
-| 🛡️ **Rollback Protection**       | Prevents downgrading to old firmware versions that might have vulnerabilities.                     |
-| 🧩 **Image Versioning**           | Supports versioned firmware images for tracking and upgrade decisions.                             |
-| 💾 **Multiple Image Slots**       | Uses two image slots: **primary (slot 0)** and **secondary (slot 1)** for safe upgrade strategies. |
-| 🧮 **Cryptographic Verification** | RSA, ECDSA, and more via **tinycrypt** or **mbedTLS** libraries.                                   |
-| 📜 **Flexible Configuration**     | Highly configurable for different platforms, storage layouts, and update mechanisms.               |
+| **Secure Boot**                 | Verifies firmware using cryptographic signatures before booting.                                   |
+| **Firmware Upgrade**           | Supports upgrading firmware images over-the-air (OTA), USB, UART, BLE, etc.                        |
+| **Rollback Protection**       | Prevents downgrading to old firmware versions that might have vulnerabilities.                     |
+| **Image Versioning**           | Supports versioned firmware images for tracking and upgrade decisions.                             |
+|  **Multiple Image Slots**       | Uses two image slots: **primary (slot 0)** and **secondary (slot 1)** for safe upgrade strategies. |
+|  **Cryptographic Verification** | RSA, ECDSA, and more via **tinycrypt** or **mbedTLS** libraries.                                   |
+|  **Flexible Configuration**     | Highly configurable for different platforms, storage layouts, and update mechanisms.               |
 
+---
 
 ### How It Works – Architecture
 
 MCUboot typically works in the following stages during the boot process:
 
-**1. MCUboot Execution**
+#### **1. MCUboot Execution**
 
 At power-on/reset, the microcontroller's ROM or loader jumps to MCUboot located in a reserved flash region (usually the first few KBs).
 
-**2. Image Validation**
+#### **2. Image Validation**
 
 MCUboot checks the primary slot (slot 0) for a valid image. It verifies:
 
@@ -35,7 +36,7 @@ MCUboot checks the primary slot (slot 0) for a valid image. It verifies:
 
 If **slot 0 is valid**, it proceeds to boot it.
 
-**3. Upgrade Check (if dual-slot)**
+#### **3. Upgrade Check (if dual-slot)**
 
 If an image in the **secondary slot (slot 1)** is marked for upgrade:
 
@@ -45,13 +46,15 @@ Optional: Saves a backup or keeps slot 0 intact depending on the **upgrade strat
 
 After swap, it **boots into the new firmware**
 
-**4. Post-Boot Confirmation**
+#### **4. Post-Boot Confirmation**
 
 After the application boots:
 
 It must "**confirm**" the new image using mcumgr or an API call
 
 If not confirmed, MCUboot will roll back on the next boot (if rollback is enabled)
+
+---
 
 ### Image Slots
 
@@ -64,8 +67,10 @@ MCUboot uses a dual-slot strategy for upgrades:
 
 
 Upgrades are done via:
-- **Swap (default)**: Slot 1 image is swapped into slot 0
+ - **Swap (default)**: Slot 1 image is swapped into slot 0
  - **Overwrite**: Slot 0 is erased and overwritten with Slot 1
+
+---
 
 ### Security Model
 
@@ -120,6 +125,8 @@ Zephyr uses the sysbuild system to build both MCUboot and the application togeth
 - Version control and audit of deployed firmware
 - BLE/USB/UART-based bootloading
 
+---
+
 ### Pros and Cons
 #### ✅ Pros:
 
@@ -133,6 +140,7 @@ Zephyr uses the sysbuild system to build both MCUboot and the application togeth
 - Needs learning curve for image management tools
 - More complexity compared to a simple bootloader
 
+---
 ### Useful Tools
 
 | Tool                 | Purpose                            |
