@@ -35,11 +35,11 @@ Building and Running
 
 1. Set up your Zephyr development environment (see Zephyr's Getting Started Guide).
 
-2. Choose a compatible board (e.g., ``nrf52840dk_nrf52840``) and build the sample:
+2. Choose a compatible board (e.g., ``esp32s3_devkitc``) and build the sample:
 
    .. code-block:: bash
 
-      west build -b nrf52840dk_nrf52840 path/to/sample
+      west build -b esp32s3_devkit/esp32s3/procpu path/to/sample
 
 3. Flash the firmware to your board:
 
@@ -51,7 +51,7 @@ Building and Running
 
    .. code-block:: bash
 
-      minicom -D /dev/ttyACM0
+      minicom -D /dev/ttyUSB0 -b 115200
 
    You should see log output similar to:
 
@@ -81,10 +81,12 @@ Beacon Packet Details
 ---------------------
 
 - **Advertising Data**:
+
   - Flags: ``BT_LE_AD_NO_BREDR``
   - Complete Device Name: Configured via ``CONFIG_BT_DEVICE_NAME``
 
 - **Scan Response Data**:
+
   - UUID: Eddystone (0xFEAA)
   - Frame Type: URL (0x10)
   - Tx Power: Calibrated at 0m (0x00)
@@ -95,7 +97,7 @@ Demonstration
 
 Below is a screenshot of the beacon as seen in a BLE scanner app (e.g., nRF Connect for Mobile):
 
-.. image:: img/ble_beacon_mobile_result.png
+.. image:: img/ble_beacon_mobile_result.jpg
    :alt: BLE beacon as seen on mobile
    :align: center
    :scale: 80%
