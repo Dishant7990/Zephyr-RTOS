@@ -100,11 +100,11 @@ Below is a screenshot of the beacon as seen in a BLE scanner app (e.g., nRF Conn
 .. image:: img/ble_beacon_mobile_result.jpg
    :alt: BLE beacon as seen on mobile
    :align: center
-   :scale: 80%
+   :scale: 40%
 
 
 References
 ----------
-- `Nordic Dev Academy <https://academy.nordicsemi.com/courses/bluetooth-low-energy-fundamentals/lessons/lesson-2-bluetooth-le-advertising/topic/blefund-lesson-2-exercise-1>`
+- `Nordic Dev Academy <https://academy.nordicsemi.com/courses/bluetooth-low-energy-fundamentals/lessons/lesson-2-bluetooth-le-advertising/topic/blefund-lesson-2-exercise-1>`_
 - `Zephyr Bluetooth Documentation <https://docs.zephyrproject.org/latest/services/bluetooth/index.html>`_
 - `Eddystone Specification <https://github.com/google/eddystone>`_
