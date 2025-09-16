@@ -1,0 +1,7 @@
+sample:
+  name: BLE Beacon Example
+  description: >
+    This sample demonstrates a basic Bluetooth Low Energy (BLE) beacon using the Zephyr RTOS.
+    It initializes the Bluetooth subsystem and starts non-connectable advertising with both
+    advertising and scan response data. The scan response includes an Eddystone-URL frame
+    broadcasting a URL ("http://www.zephyrproject.org").
