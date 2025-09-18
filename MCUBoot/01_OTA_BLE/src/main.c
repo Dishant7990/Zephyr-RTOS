@@ -1,5 +1,5 @@
 /**
- * @file dynamic_beacon.c
+ * @file main.c
  * @brief BLE Dynamic Beacon Example using Zephyr
  *
  * This program demonstrates how to set up a BLE beacon in Zephyr,
@@ -28,7 +28,7 @@
 #define COMPANY_ID_CODE     0x02E5  /* Espressif Systems (Shanghai) Co., Ltd. */
 
 /* ========================== LOGGING MODULE ========================== */
-LOG_MODULE_REGISTER(Dynamic_Beacon, LOG_LEVEL_DBG);
+LOG_MODULE_REGISTER(DFU_OTA_BLE , LOG_LEVEL_DBG);
 
 /* ========================== DATA STRUCTURES ========================== */
 
